@@ -14,12 +14,14 @@ def speak(text):
 def listen():
 
     with sr.Microphone() as source:
+
         print("Listening...")
         speak("Listening...")
         recognizer.adjust_for_ambient_noise(source)
         audio = recognizer.listen(source)
 
         try:
+
             print("Recognizing...")
             speak("Recognizing...")
             query = recognizer.recognize_google(audio)
@@ -27,13 +29,17 @@ def listen():
             speak(f"Did you say: {query}")
 
         except sr.UnknownValueError:
+
             print("Sorry, Can you please repeat? I could'nt understand that.")
             speak("Sorry, Can you please repeat? I could not understand that.")
+
             return None
         
         except sr.RequestError:
+            
             print("Sorry, I am currently down at the moment!.")
             speak("Sorry, I am currently down at the moment!.")
+            
             return None
         
     return query.lower()
@@ -71,11 +77,13 @@ if __name__ == "__main__":
     speak("Hello! I am Ammar Voice Assistant. How can I help you?")
 
     while True:
+
         query = listen()
         
         if query:
             handle_query(query)
 
             if "stop" in query or "end" in query or "finish" in query:
-                speak("Goodbye! Have a nice day!!")
+                speak("Goodbye! Have a nice!!")
+                
                 break
