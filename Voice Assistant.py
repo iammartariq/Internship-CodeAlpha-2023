@@ -84,6 +84,6 @@ if __name__ == "__main__":
             handle_query(query)
 
             if "stop" in query or "end" in query or "finish" in query:
-                speak("Goodbye! Have a nice!!")
+                speak("Goodbye! Have a nice day!!")
                 
                 break
