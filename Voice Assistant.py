@@ -58,7 +58,6 @@ def handle_query(query):
         speak("What are your plans for today?")
 
     elif 'time' in query:
-        from datetime import datetime
         now = datetime.now().strftime("%H:%M")
         speak(f"The current time is {now}")
         speak("What are your plans for today?")
